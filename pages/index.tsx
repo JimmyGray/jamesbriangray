@@ -1,5 +1,11 @@
 import Head from 'next/head';
 import React from 'react';
+import styled from '@emotion/styled';
+
+const Title = styled.h1(({ theme }: any) => ({
+  color: theme.colors.group6.base,
+  ...theme.t.t40
+}));
 
 const Home = () => (
     <div>
@@ -7,9 +13,9 @@ const Home = () => (
         <title>Home</title>
         <link rel='icon' href='../public/favicon.ico'/>
       </Head>
-      <div className='hero'>
+      <Title>
         James Brian Gray
-      </div>
+      </Title>
     </div>
 );
 
