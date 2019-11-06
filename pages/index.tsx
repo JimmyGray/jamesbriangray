@@ -1,22 +1,19 @@
 import Head from 'next/head';
 import React from 'react';
-import styled from '@emotion/styled';
-
-const Title = styled.h1(({ theme }: any) => ({
-  color: theme.colors.group6.base,
-  ...theme.t.t40
-}));
+import Main from '../src/components/main/Main';
+import Nav from '../src/components/nav/Nav';
 
 const Home = () => (
-    <div>
+    <>
       <Head>
         <title>Home</title>
         <link rel='icon' href='../public/favicon.ico'/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+              integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossOrigin="anonymous"/>
       </Head>
-      <Title>
-        James Brian Gray
-      </Title>
-    </div>
+      <Nav/>
+      <Main />
+    </>
 );
 
 export default Home;
