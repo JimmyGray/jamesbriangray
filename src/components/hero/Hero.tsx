@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
 
-const Container = styled.div({
+const Container = styled.section({
   display: 'flex',
   flexDirection: 'column',
   height: '100vh',

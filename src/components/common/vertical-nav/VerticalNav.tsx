@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
 
-const Container = styled.div(({ theme }: any) => ({
+const Container = styled.aside(({ theme }: any) => ({
   position: 'fixed',
   bottom: 0,
   color: 'white',
@@ -12,7 +12,8 @@ const Container = styled.div(({ theme }: any) => ({
     width: 1,
     height: 90,
     backgroundColor: theme.colors.group4.base,
-    margin: '0px auto'
+    margin: '0px auto',
+    marginTop: theme.spacing.xLarge
   }
 }));
 

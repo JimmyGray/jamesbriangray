@@ -7,7 +7,7 @@ export interface SectionProps {
   title: string;
 }
 
-const Container = styled.div(({ theme }: any) => ({
+const Container = styled.section(({ theme }: any) => ({
   marginTop: theme.spacing.xxLarge,
   marginBottom: theme.spacing.xxLarge
 }));

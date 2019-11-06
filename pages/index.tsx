@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import Footer from '../src/components/footer/Footer';
 import Main from '../src/components/main/Main';
 import Nav from '../src/components/nav/Nav';
 
@@ -12,7 +13,8 @@ const Home = () => (
               integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossOrigin="anonymous"/>
       </Head>
       <Nav/>
-      <Main />
+      <Main/>
+      <Footer/>
     </>
 );
 
