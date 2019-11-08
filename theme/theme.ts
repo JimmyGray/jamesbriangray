@@ -86,6 +86,35 @@ const spacing: Spacing = {
   xLarge: 50,
   xxLarge: 100
 };
+
+export interface MediaQueries {
+  small: string;
+  medium: string;
+  large: string;
+  xLarge: string;
+}
+
+export interface Breakpoints {
+  small: number;
+  medium: number;
+  large: number;
+  xLarge: number;
+}
+
+export const breakpoints: Breakpoints = {
+  small: 600,
+  medium: 960,
+  large: 1280,
+  xLarge: 1920
+};
+
+export const mq: MediaQueries = {
+  small: `@media (min-width: ${breakpoints.small}px)`,
+  medium: `@media (min-width: ${breakpoints.medium}px)`,
+  large: `@media (min-width: ${breakpoints.large}px)`,
+  xLarge: `@media (min-width: ${breakpoints.xLarge}px)`,
+};
+
 export const theme: Theme = {
   colors: {
     ...colorGroups,
