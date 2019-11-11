@@ -3,8 +3,8 @@ import { withTheme } from 'emotion-theming';
 import React from 'react';
 
 const Container = styled.footer(({ theme }: any) => ({
-  height: 100,
-  backgroundColor: theme.colors.group4.base,
+  height: 80,
+  backgroundColor: theme.colors.group4.dark,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -13,7 +13,7 @@ const Container = styled.footer(({ theme }: any) => ({
 
 const Footer = () => (
     <Container>
-      Footer
+      Built by James Gray
     </Container>
 );
 

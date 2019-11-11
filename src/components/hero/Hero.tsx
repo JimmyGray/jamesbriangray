@@ -14,7 +14,8 @@ const Container = styled.section({
 const Introduction = styled.h1(({ theme }: any) => ({
   color: theme.colors.white,
   margin: 0,
-  ...theme.t.t28
+  ...theme.t.t28,
+  fontFamily: theme.t.fontFamily.sfMono
 }));
 
 const Name = styled.h2(({ theme }: any) => ({

@@ -15,6 +15,10 @@ export interface FontStyles {
   normal: Object;
 }
 
+export interface FontFamily {
+ sfMono: string;
+}
+
 export interface T {
   t56: Font;
   t40: Font;
@@ -38,6 +42,7 @@ export interface T {
   t8: Font;
   weights: Weights;
   styles: FontStyles;
+  fontFamily: FontFamily;
 }
 
 export const t: T = {
@@ -142,5 +147,8 @@ export const t: T = {
     normal: {
       fontStyle: 'normal'
     }
+  },
+  fontFamily: {
+    sfMono: 'SF Mono'
   }
 };

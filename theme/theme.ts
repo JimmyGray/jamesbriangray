@@ -103,9 +103,9 @@ export interface Breakpoints {
 
 export const breakpoints: Breakpoints = {
   small: 600,
-  medium: 960,
-  large: 1280,
-  xLarge: 1920
+  medium: 900,
+  large: 1200,
+  xLarge: 1800
 };
 
 export const mq: MediaQueries = {
