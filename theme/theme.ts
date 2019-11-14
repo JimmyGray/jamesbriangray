@@ -5,6 +5,7 @@ export interface Theme {
   colors: Colors;
   spacing: Spacing;
   states: ColorStates;
+  main: Main;
   t: T;
 }
 
@@ -28,17 +29,18 @@ export interface Link {
   visited: string;
 }
 
-export interface Button {
+export interface MainStates {
   default: string;
   hover: string;
   disabled: string;
   light: string;
+  lighter: string;
 }
 
-export interface Buttons {
-  primary: Button;
-  secondary: Button;
-  tertiary: Button;
+export interface Main {
+  primary: MainStates;
+  secondary: MainStates;
+  tertiary: MainStates;
 }
 
 export interface ColorStates {
@@ -48,7 +50,6 @@ export interface ColorStates {
   warning: ColorState;
   default: ColorState;
   link: Link;
-  buttons: Buttons;
 }
 
 export interface Colors {
@@ -109,10 +110,10 @@ export const breakpoints: Breakpoints = {
 };
 
 export const mq: MediaQueries = {
-  small: `@media (min-width: ${breakpoints.small}px)`,
-  medium: `@media (min-width: ${breakpoints.medium}px)`,
-  large: `@media (min-width: ${breakpoints.large}px)`,
-  xLarge: `@media (min-width: ${breakpoints.xLarge}px)`,
+  small: `@media (min-width: ${ breakpoints.small }px)`,
+  medium: `@media (min-width: ${ breakpoints.medium }px)`,
+  large: `@media (min-width: ${ breakpoints.large }px)`,
+  xLarge: `@media (min-width: ${ breakpoints.xLarge }px)`
 };
 
 export const theme: Theme = {
@@ -123,8 +124,8 @@ export const theme: Theme = {
   },
   states: {
     hover: {
-      light: colorGroups.group7.light,
-      dark: colorGroups.group7.base
+      light: colorGroups.group1.light,
+      dark: colorGroups.group1.base
     },
     selected: {
       light: colorGroups.group5.light,
@@ -147,26 +148,29 @@ export const theme: Theme = {
     warning: {
       light: colorGroups.group8.lighter,
       dark: colorGroups.group8.base
+    }
+  },
+  main: {
+    primary: {
+      default: colorGroups.group1.base,
+      hover: colorGroups.group1.dark,
+      disabled: colorGroups.group1.lighter,
+      light: colorGroups.group1.light,
+      lighter: colorGroups.group1.lighter
     },
-    buttons: {
-      primary: {
-        default: colorGroups.group2.base,
-        hover: colorGroups.group2.dark,
-        disabled: colorGroups.group2.lighter,
-        light: colorGroups.group2.lighter
-      },
-      secondary: {
-        default: colorGroups.group1.base,
-        hover: colorGroups.group1.dark,
-        disabled: colorGroups.group1.lighter,
-        light: colorGroups.group1.lighter
-      },
-      tertiary: {
-        default: colorGroups.group5.base,
-        hover: colorGroups.group5.dark,
-        disabled: colorGroups.group5.lighter,
-        light: colorGroups.group5.lighter
-      }
+    secondary: {
+      default: colorGroups.group1.base,
+      hover: colorGroups.group1.dark,
+      disabled: colorGroups.group1.lighter,
+      light: colorGroups.group1.light,
+      lighter: colorGroups.group1.lighter
+    },
+    tertiary: {
+      default: colorGroups.group5.base,
+      hover: colorGroups.group5.dark,
+      disabled: colorGroups.group5.lighter,
+      light: colorGroups.group5.light,
+      lighter: colorGroups.group5.lighter
     }
   },
   spacing,

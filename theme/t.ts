@@ -17,9 +17,11 @@ export interface FontStyles {
 
 export interface FontFamily {
  sfMono: string;
+ roboto: string;
 }
 
 export interface T {
+  t80: Font;
   t56: Font;
   t40: Font;
   t32: Font;
@@ -46,6 +48,10 @@ export interface T {
 }
 
 export const t: T = {
+  t80: {
+    fontSize: '8rem',
+    letterSpacing: '-0.067rem'
+  },
   t56: {
     fontSize: '5.6rem',
     letterSpacing: '-0.067rem'
@@ -149,6 +155,7 @@ export const t: T = {
     }
   },
   fontFamily: {
-    sfMono: 'SF Mono'
+    sfMono: 'SF Mono',
+    roboto: 'Roboto'
   }
 };

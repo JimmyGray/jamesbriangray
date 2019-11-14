@@ -9,13 +9,14 @@ const Container = styled.nav(({ theme }: any) => ({
   flexDirection: 'row',
   justifyContent: 'space-between',
   width: '100%',
-  padding: `${ theme.spacing.large }px`
+  padding: `${ theme.spacing.xLarge }px`
 }));
 
 const Name = styled.h5(({ theme }: any) => ({
   color: theme.colors.white,
   margin: 0,
-  ...theme.t.t32
+  ...theme.t.t32,
+  fontFamily: theme.t.fontFamily.sfMono
 }));
 
 const Menu = styled.ol(({ theme }: any) => ({
@@ -39,12 +40,12 @@ const Item = styled.li(({ theme }: any) => ({
   cursor: 'pointer',
   transition: 'color 0.5s ease',
   ':hover': {
-    color: theme.colors.group1.base
+    color: theme.main.primary.light
   }
 }));
 
 const ItemNumber = styled.span(({ theme }: any) => ({
-  color: theme.colors.group1.base,
+  color: theme.main.primary.light,
   marginRight: theme.spacing.small,
   fontFamily: theme.t.fontFamily.sfMono
 }));

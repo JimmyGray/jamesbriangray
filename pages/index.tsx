@@ -11,6 +11,7 @@ const Home = () => (
         <link rel='icon' href='../public/favicon.ico'/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
               integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI=" crossOrigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
       </Head>
       <Nav/>
       <Main/>
