@@ -9,7 +9,7 @@ import { Where } from '../where/Where';
 const Container = styled.div(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: theme.colors.group4.darker,
+  backgroundColor: theme.colors.background,
   paddingTop: '5%',
   paddingLeft: theme.spacing.xLarge,
   paddingRight: theme.spacing.xLarge,

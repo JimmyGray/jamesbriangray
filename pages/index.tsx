@@ -3,6 +3,7 @@ import React from 'react';
 import Footer from '../src/components/footer/Footer';
 import Main from '../src/components/main/Main';
 import Nav from '../src/components/nav/Nav';
+import { Switch } from '../src/components/switch/Switch';
 
 const Home = () => (
     <>
@@ -14,6 +15,7 @@ const Home = () => (
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
       </Head>
       <Nav/>
+      <Switch />
       <Main/>
       <Footer/>
     </>

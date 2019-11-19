@@ -1,18 +1,23 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { mq } from '../../../theme/theme';
 
-const Container = styled.nav(({ theme }: any) => ({
+const Container = styled.nav(({ theme, visible, top }: any) => ({
+  opacity: visible ? 1 : 0,
   position: 'fixed',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
   width: '100%',
-  padding: `${ theme.spacing.xLarge }px`
+  padding: `0 ${ theme.spacing.xLarge }px`,
+  transition: 'all 0.5s ease',
+  height: top ? 120 : 80
 }));
 
 const Name = styled.h5(({ theme }: any) => ({
+  display: 'flex',
+  alignItems: 'center',
   color: theme.colors.white,
   margin: 0,
   ...theme.t.t32,
@@ -50,24 +55,40 @@ const ItemNumber = styled.span(({ theme }: any) => ({
   fontFamily: theme.t.fontFamily.sfMono
 }));
 
-const Nav = () => (
-    <Container>
-      <Name>JG</Name>
-      <Menu>
-        <Item>
-          <ItemNumber>01.</ItemNumber>About
-        </Item>
-        <Item>
-          <ItemNumber>02.</ItemNumber>Experience
-        </Item>
-        <Item>
-          <ItemNumber>03.</ItemNumber>Work
-        </Item>
-        <Item>
-          <ItemNumber>04.</ItemNumber>Contact
-        </Item>
-      </Menu>
-    </Container>
-);
+const Nav = () => {
+  let [pos, setPos] = useState();
+  let [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      let offset = window.pageYOffset;
+      setVisible(pos > offset);
+      setPos(offset);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return (() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+  });
+  const top: boolean = pos === 0;
+  return (
+      <Container visible={visible} top={top}>
+        <Name>JG</Name>
+        <Menu>
+          <Item>
+            <ItemNumber>01.</ItemNumber>About
+          </Item>
+          <Item>
+            <ItemNumber>02.</ItemNumber>Experience
+          </Item>
+          <Item>
+            <ItemNumber>03.</ItemNumber>Work
+          </Item>
+          <Item>
+            <ItemNumber>04.</ItemNumber>Contact
+          </Item>
+        </Menu>
+      </Container>
+  );
+};
 
 export default withTheme(Nav);

@@ -33,6 +33,8 @@ export interface MainStates {
   default: string;
   hover: string;
   disabled: string;
+  dark: string;
+  darker: string;
   light: string;
   lighter: string;
 }
@@ -67,6 +69,7 @@ export interface Colors {
   group12: ColorGroup;
   white: string;
   black: string;
+  background: string;
 }
 
 export interface Spacing {
@@ -120,7 +123,8 @@ export const theme: Theme = {
   colors: {
     ...colorGroups,
     white: '#fff',
-    black: '#000'
+    black: '#000',
+    background: colorGroups.group10.darker
   },
   states: {
     hover: {
@@ -156,21 +160,27 @@ export const theme: Theme = {
       hover: colorGroups.group1.dark,
       disabled: colorGroups.group1.lighter,
       light: colorGroups.group1.light,
-      lighter: colorGroups.group1.lighter
+      lighter: colorGroups.group1.lighter,
+      dark: colorGroups.group1.dark,
+      darker: colorGroups.group1.darker
     },
     secondary: {
       default: colorGroups.group1.base,
       hover: colorGroups.group1.dark,
       disabled: colorGroups.group1.lighter,
       light: colorGroups.group1.light,
-      lighter: colorGroups.group1.lighter
+      lighter: colorGroups.group1.lighter,
+      dark: colorGroups.group1.dark,
+      darker: colorGroups.group1.darker
     },
     tertiary: {
       default: colorGroups.group5.base,
       hover: colorGroups.group5.dark,
       disabled: colorGroups.group5.lighter,
       light: colorGroups.group5.light,
-      lighter: colorGroups.group5.lighter
+      lighter: colorGroups.group5.lighter,
+      dark: colorGroups.group1.dark,
+      darker: colorGroups.group1.darker
     }
   },
   spacing,

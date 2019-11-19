@@ -6,7 +6,7 @@ const Container = styled.button(({ theme }: any) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: theme.spacing.medium,
+  padding: theme.spacing.small,
   border: `2px solid ${ theme.main.primary.light }`,
   backgroundColor: theme.colors.group4.darker,
   color: theme.main.primary.light,
