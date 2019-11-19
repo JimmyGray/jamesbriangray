@@ -11,7 +11,7 @@ const Container = styled.nav(({ theme, visible, top }: any) => ({
   justifyContent: 'space-between',
   width: '100%',
   padding: `0 ${ theme.spacing.xLarge }px`,
-  transition: 'all 0.5s ease',
+  transition: theme.transition,
   height: top ? 120 : 80
 }));
 
@@ -43,14 +43,14 @@ const Item = styled.li(({ theme }: any) => ({
   ...theme.t.t14,
   fontFamily: theme.t.fontFamily.sfMono,
   cursor: 'pointer',
-  transition: 'color 0.5s ease',
+  transition: theme.transition,
   ':hover': {
-    color: theme.main.primary.light
+    color: theme.colors.primary.hover
   }
 }));
 
 const ItemNumber = styled.span(({ theme }: any) => ({
-  color: theme.main.primary.light,
+  color: theme.colors.primary.light,
   marginRight: theme.spacing.small,
   fontFamily: theme.t.fontFamily.sfMono
 }));

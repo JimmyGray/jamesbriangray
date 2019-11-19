@@ -4,9 +4,8 @@ import { t, T } from './t';
 export interface Theme {
   colors: Colors;
   spacing: Spacing;
-  states: ColorStates;
-  main: Main;
   t: T;
+  transition: string;
 }
 
 export interface ColorGroup {
@@ -17,41 +16,9 @@ export interface ColorGroup {
   darker: string;
 }
 
-export interface ColorState {
-  light: string;
-  dark: string;
-}
-
-export interface Link {
-  default: string;
-  hover: string;
-  active: string;
-  visited: string;
-}
-
-export interface MainStates {
-  default: string;
+export interface MainStates extends ColorGroup {
   hover: string;
   disabled: string;
-  dark: string;
-  darker: string;
-  light: string;
-  lighter: string;
-}
-
-export interface Main {
-  primary: MainStates;
-  secondary: MainStates;
-  tertiary: MainStates;
-}
-
-export interface ColorStates {
-  hover: ColorState;
-  selected: ColorState;
-  error: ColorState;
-  warning: ColorState;
-  default: ColorState;
-  link: Link;
 }
 
 export interface Colors {
@@ -67,9 +34,12 @@ export interface Colors {
   group10: ColorGroup;
   group11: ColorGroup;
   group12: ColorGroup;
+  primary: MainStates;
+  secondary: MainStates;
+  tertiary: MainStates;
+  background: ColorGroup;
   white: string;
   black: string;
-  background: string;
 }
 
 export interface Spacing {
@@ -122,42 +92,9 @@ export const mq: MediaQueries = {
 export const theme: Theme = {
   colors: {
     ...colorGroups,
-    white: '#fff',
-    black: '#000',
-    background: colorGroups.group10.darker
-  },
-  states: {
-    hover: {
-      light: colorGroups.group1.light,
-      dark: colorGroups.group1.base
-    },
-    selected: {
-      light: colorGroups.group5.light,
-      dark: colorGroups.group5.base
-    },
-    error: {
-      light: colorGroups.group11.light,
-      dark: colorGroups.group11.base
-    },
-    default: {
-      light: colorGroups.group10.light,
-      dark: colorGroups.group10.base
-    },
-    link: {
-      default: colorGroups.group1.base,
-      hover: colorGroups.group1.dark,
-      active: colorGroups.group1.base,
-      visited: colorGroups.group1.base
-    },
-    warning: {
-      light: colorGroups.group8.lighter,
-      dark: colorGroups.group8.base
-    }
-  },
-  main: {
     primary: {
-      default: colorGroups.group1.base,
-      hover: colorGroups.group1.dark,
+      base: colorGroups.group1.base,
+      hover: colorGroups.group1.light,
       disabled: colorGroups.group1.lighter,
       light: colorGroups.group1.light,
       lighter: colorGroups.group1.lighter,
@@ -165,7 +102,7 @@ export const theme: Theme = {
       darker: colorGroups.group1.darker
     },
     secondary: {
-      default: colorGroups.group1.base,
+      base: colorGroups.group1.base,
       hover: colorGroups.group1.dark,
       disabled: colorGroups.group1.lighter,
       light: colorGroups.group1.light,
@@ -174,15 +111,25 @@ export const theme: Theme = {
       darker: colorGroups.group1.darker
     },
     tertiary: {
-      default: colorGroups.group5.base,
+      base: colorGroups.group5.base,
       hover: colorGroups.group5.dark,
       disabled: colorGroups.group5.lighter,
       light: colorGroups.group5.light,
       lighter: colorGroups.group5.lighter,
       dark: colorGroups.group1.dark,
       darker: colorGroups.group1.darker
-    }
+    },
+    background: {
+      lighter: colorGroups.group4.lighter,
+      light: colorGroups.group4.light,
+      base: colorGroups.group4.base,
+      dark: colorGroups.group4.dark,
+      darker: colorGroups.group4.darker
+    },
+    white: '#fff',
+    black: '#000'
   },
   spacing,
-  t
+  t,
+  transition: 'all 0.5s ease'
 };

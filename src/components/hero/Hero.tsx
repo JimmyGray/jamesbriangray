@@ -17,7 +17,7 @@ const Text = styled.span(({ theme }: any) => ({
   marginTop: theme.spacing.small,
   ...theme.t.t16,
   fontFamily: theme.t.fontFamily.sfMono,
-  color: theme.main.primary.light,
+  color: theme.colors.primary.light,
   lineHeight: '3rem',
   [mq.small]: {
     ...theme.t.t18
