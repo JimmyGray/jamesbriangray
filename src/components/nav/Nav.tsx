@@ -58,6 +58,13 @@ const Name = styled.span(({ theme }: any) => ({
   ...theme.t.t32
 }));
 
+const MobileSwitch = styled.div(({ theme }: any) => ({
+  display: 'flex',
+  [mq.small]: {
+    display: 'none'
+  }
+}));
+
 const Nav = () => {
   const { visible, pos } = isNavVisible();
   const top: boolean = pos === 0;
@@ -66,6 +73,9 @@ const Nav = () => {
         <Name>
           JG
         </Name>
+        <MobileSwitch>
+          <Switch />
+        </MobileSwitch>
         <MobileNav />
         <Menu>
           <Item>
