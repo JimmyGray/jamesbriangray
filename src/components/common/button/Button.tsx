@@ -7,17 +7,17 @@ const Container = styled.button(({ theme }: any) => ({
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing.small,
-  border: `2px solid ${ theme.colors.primary.light }`,
-  backgroundColor: theme.colors.group4.dark,
-  color: theme.colors.primary.light,
+  backgroundColor: theme.colors.primary.base,
+  color: theme.colors.primary.accent,
+  border: 'none',
   cursor: 'pointer',
   transition: theme.transition,
   fontFamily: theme.t.fontFamily.sfMono,
   outline: 'none',
     ...theme.t.t14,
   ':hover,:focus': {
-    backgroundColor: theme.colors.primary.hover,
-    color: theme.colors.group4.dark
+    backgroundColor: theme.colors.primary.accent,
+    color: theme.colors.primary.base
   }
 }));
 

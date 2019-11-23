@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
-import { mq } from '../../../theme/theme';
+import { mq } from '../../../theme/template/theme';
 import { About } from '../about/About';
 import Hero from '../hero/Hero';
 import { Where } from '../where/Where';
@@ -9,7 +9,7 @@ import { Where } from '../where/Where';
 const Container = styled.div(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor: theme.colors.background.dark,
+  backgroundColor: theme.colors.background,
   paddingTop: '5%',
   paddingLeft: theme.spacing.xLarge,
   paddingRight: theme.spacing.xLarge,

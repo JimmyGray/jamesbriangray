@@ -1,14 +1,19 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppThemeContext } from '../provider/AppThemeProvider';
 
 const Container = styled.div({
-  position: 'fixed',
-  bottom: 0,
-  left: 0
+  width: 20,
+  display: 'flex',
+  alignItems: 'center'
 });
 
-export const Switch = () => (
-    <Container>
-      Switch
-    </Container>
-);
+export const Switch = () => {
+  const { dark, onChange } = useContext(AppThemeContext);
+  return (
+      <Container onClick={onChange}>
+        Switch
+        {dark ? 'Checked' : 'Un-Checked'}
+      </Container>
+  );
+};

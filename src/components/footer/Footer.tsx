@@ -4,15 +4,15 @@ import React from 'react';
 
 const Container = styled.footer(({ theme }: any) => ({
   height: 80,
-  backgroundColor: theme.colors.group4.darker,
+  backgroundColor: theme.colors.footer,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: theme.colors.white,
+  color: theme.colors.accent,
   fontFamily: theme.t.fontFamily.sfMono,
   ...theme.t.t12,
   ':hover': {
-    color: theme.colors.primary.hover,
+    color: theme.colors.primary.base,
     cursor: 'pointer',
     transition: theme.transition
   }

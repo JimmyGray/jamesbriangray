@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
-import { mq } from '../../../theme/theme';
+import { mq } from '../../../theme/template/theme';
 import { Button } from '../common/button/Button';
 
 const Container = styled.section({
@@ -17,15 +17,15 @@ const Text = styled.span(({ theme }: any) => ({
   marginTop: theme.spacing.small,
   ...theme.t.t16,
   fontFamily: theme.t.fontFamily.sfMono,
-  color: theme.colors.primary.light,
+  color: theme.colors.primary.base,
   lineHeight: '3rem',
   [mq.small]: {
     ...theme.t.t18
   }
 }));
 
-const White = styled(Text)(({ theme }: any) => ({
-  color: theme.colors.white
+const Accent = styled(Text)(({ theme }: any) => ({
+  color: theme.colors.accent
 }));
 
 const ContactButton = styled(Button)(({ theme }: any) => ({
@@ -38,10 +38,10 @@ const Hero = () => (
     <Container>
       <h1>
         <Text>
-          Hi! I'm  <White>James Gray</White> I build things for the web.
+          Hi! I'm  <Accent>James Gray</Accent> I build things for the web.
         </Text>
       </h1>
-      <Text>I'm a <White>software engineer</White> based in London, specializing in building
+      <Text>I'm a <Accent>software engineer</Accent> threed in London, specializing in building
         exceptional, high-quality websites and applications.</Text>
       <ContactButton label={ 'Contact Me' }/>
     </Container>

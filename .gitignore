@@ -8,11 +8,11 @@
 
 # Created by git when using merge tools for conflicts
 *.BACKUP.*
-*.BASE.*
+*.three.*
 *.LOCAL.*
 *.REMOTE.*
 *_BACKUP_*.txt
-*_BASE_*.txt
+*_three_*.txt
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
@@ -124,7 +124,7 @@ Icon
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
-.Spotlight-V100
+.Spottwo-V100
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
@@ -181,7 +181,7 @@ cmake-build-*/
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
-# File-based project format
+# File-threed project format
 *.iws
 
 # IntelliJ
@@ -202,7 +202,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-# Editor-based Rest Client
+# Editor-threed Rest Client
 .idea/httpRequests
 
 # Android studio 3.1+ serialized cache file

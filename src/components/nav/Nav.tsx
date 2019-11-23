@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
-import React, { useEffect, useState } from 'react';
-import { mq } from '../../../theme/theme';
+import React from 'react';
+import { mq } from '../../../theme/template/theme';
+import { isNavVisible } from '../common/hooks/isNavVisible';
+import { Switch } from '../switch/Switch';
 
 const Container = styled.nav(({ theme, visible, top }: any) => ({
   opacity: visible ? 1 : 0,
@@ -13,15 +15,6 @@ const Container = styled.nav(({ theme, visible, top }: any) => ({
   padding: `0 ${ theme.spacing.xLarge }px`,
   transition: theme.transition,
   height: top ? 120 : 80
-}));
-
-const Name = styled.h5(({ theme }: any) => ({
-  display: 'flex',
-  alignItems: 'center',
-  color: theme.colors.white,
-  margin: 0,
-  ...theme.t.t32,
-  fontFamily: theme.t.fontFamily.sfMono
 }));
 
 const Menu = styled.ol(({ theme }: any) => ({
@@ -36,7 +29,7 @@ const Menu = styled.ol(({ theme }: any) => ({
 }));
 
 const Item = styled.li(({ theme }: any) => ({
-  color: theme.colors.white,
+  color: theme.colors.accent,
   margin: 0,
   display: 'inline-block',
   marginRight: theme.spacing.large,
@@ -45,34 +38,22 @@ const Item = styled.li(({ theme }: any) => ({
   cursor: 'pointer',
   transition: theme.transition,
   ':hover': {
-    color: theme.colors.primary.hover
+    color: theme.colors.primary.base
   }
 }));
 
 const ItemNumber = styled.span(({ theme }: any) => ({
-  color: theme.colors.primary.light,
+  color: theme.colors.primary.base,
   marginRight: theme.spacing.small,
   fontFamily: theme.t.fontFamily.sfMono
 }));
 
 const Nav = () => {
-  let [pos, setPos] = useState();
-  let [visible, setVisible] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      let offset = window.pageYOffset;
-      setVisible(pos > offset);
-      setPos(offset);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return (() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
-  });
+  const { visible, pos } = isNavVisible();
   const top: boolean = pos === 0;
   return (
       <Container visible={visible} top={top}>
-        <Name>JG</Name>
+        <Switch />
         <Menu>
           <Item>
             <ItemNumber>01.</ItemNumber>About

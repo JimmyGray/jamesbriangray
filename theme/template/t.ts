@@ -5,7 +5,7 @@ export interface Font {
 
 export interface Weights {
   default: Object;
-  light: Object;
+  two: Object;
   medium: Object;
   bold: Object;
 }
@@ -136,7 +136,7 @@ export const t: T = {
     default: {
       fontWeight: 400
     },
-    light: {
+    two: {
       fontWeight: 300
     },
     medium: {
