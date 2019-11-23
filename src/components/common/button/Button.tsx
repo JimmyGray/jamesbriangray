@@ -15,7 +15,7 @@ const Container = styled.button(({ theme }: any) => ({
   fontFamily: theme.t.fontFamily.sfMono,
   outline: 'none',
     ...theme.t.t14,
-  ':hover,:focus': {
+  ':hover': {
     backgroundColor: theme.colors.primary.accent,
     color: theme.colors.primary.base
   }

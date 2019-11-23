@@ -4,6 +4,7 @@ import React from 'react';
 import { mq } from '../../../theme/template/theme';
 import { isNavVisible } from '../common/hooks/isNavVisible';
 import { Switch } from '../switch/Switch';
+import { MobileNav } from './mobile/MobileNav';
 
 const Container = styled.nav(({ theme, visible, top }: any) => ({
   opacity: visible ? 1 : 0,
@@ -48,12 +49,24 @@ const ItemNumber = styled.span(({ theme }: any) => ({
   fontFamily: theme.t.fontFamily.sfMono
 }));
 
+const Name = styled.span(({ theme }: any) => ({
+  color: theme.colors.primary.base,
+  marginRight: theme.spacing.small,
+  fontFamily: theme.t.fontFamily.sfMono,
+  alignItems: 'center',
+  display: 'flex',
+  ...theme.t.t32
+}));
+
 const Nav = () => {
   const { visible, pos } = isNavVisible();
   const top: boolean = pos === 0;
   return (
       <Container visible={visible} top={top}>
-        <Switch />
+        <Name>
+          JG
+        </Name>
+        <MobileNav />
         <Menu>
           <Item>
             <ItemNumber>01.</ItemNumber>About
@@ -67,6 +80,7 @@ const Nav = () => {
           <Item>
             <ItemNumber>04.</ItemNumber>Contact
           </Item>
+          <Switch />
         </Menu>
       </Container>
   );
