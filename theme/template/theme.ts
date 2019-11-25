@@ -41,6 +41,7 @@ export interface Colors {
   background: string;
   footer: string;
   accent: string;
+  menu: string;
 }
 
 export interface Spacing {

@@ -26,6 +26,7 @@ export const darkTheme: Theme = {
     },
     background: colorGroups.group4.four,
     footer: colorGroups.group4.five,
+    menu: colorGroups.group4.three,
     accent: colorGroups.group4.one
   },
   spacing,

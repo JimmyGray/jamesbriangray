@@ -6,6 +6,8 @@ import { About } from '../about/About';
 import Hero from '../hero/Hero';
 import { Where } from '../where/Where';
 
+export interface MainProps {}
+
 const Container = styled.div(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
@@ -20,11 +22,11 @@ const Container = styled.div(({ theme }: any) => ({
   }
 }));
 
-const Main = () => (
+const Main = ({}: MainProps) => (
     <Container>
-      <Hero />
-      <About />
-      <Where />
+      <Hero/>
+      <About/>
+      <Where/>
     </Container>
 );
 

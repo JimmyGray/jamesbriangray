@@ -4,18 +4,23 @@ import React from 'react';
 import { mq } from '../../../theme/template/theme';
 import { isNavVisible } from '../common/hooks/isNavVisible';
 import { Switch } from '../switch/Switch';
-import { MobileNav } from './mobile/MobileNav';
+import { Burger } from './burger/Burger';
 
-const Container = styled.nav(({ theme, visible, top }: any) => ({
-  opacity: visible ? 1 : 0,
+export interface NavProps {
+  open: boolean;
+  onClick: () => void;
+}
+
+const Container = styled.nav(({ theme, top }: any) => ({
   position: 'fixed',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
   width: '100%',
-  padding: `0 ${ theme.spacing.xLarge }px`,
+  padding: `0 ${theme.spacing.xLarge}px`,
   transition: theme.transition,
-  height: top ? 120 : 80
+  height: top ? 120 : 80,
+  zIndex: 1
 }));
 
 const Menu = styled.ol(({ theme }: any) => ({
@@ -58,25 +63,25 @@ const Name = styled.span(({ theme }: any) => ({
   ...theme.t.t32
 }));
 
-const MobileSwitch = styled.div(({ theme }: any) => ({
+const MobileSwitch = styled.div(({
   display: 'flex',
   [mq.small]: {
     display: 'none'
   }
 }));
 
-const Nav = () => {
-  const { visible, pos } = isNavVisible();
+const Nav = ({ open, onClick }: NavProps) => {
+  const { pos } = isNavVisible();
   const top: boolean = pos === 0;
   return (
-      <Container visible={visible} top={top}>
+      <Container top={top}>
+        <Burger open={open} setOpen={onClick} />
         <Name>
           JG
         </Name>
         <MobileSwitch>
-          <Switch />
+          <Switch/>
         </MobileSwitch>
-        <MobileNav />
         <Menu>
           <Item>
             <ItemNumber>01.</ItemNumber>About
@@ -90,7 +95,7 @@ const Nav = () => {
           <Item>
             <ItemNumber>04.</ItemNumber>Contact
           </Item>
-          <Switch />
+          <Switch/>
         </Menu>
       </Container>
   );

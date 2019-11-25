@@ -26,6 +26,7 @@ export const lightTheme: Theme = {
     },
     background: colorGroups.group4.one,
     footer: colorGroups.group4.two,
+    menu: colorGroups.group4.three,
     accent: colorGroups.group4.five
   },
   spacing,
