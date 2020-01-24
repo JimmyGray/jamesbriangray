@@ -1,8 +1,8 @@
 import { Global } from '@emotion/core';
 import App from 'next/app';
 import React from 'react';
-import { AppThemeProvider } from '../src/components/provider/AppThemeProvider';
-import { globalStyles } from '../theme/template/global';
+import { AppThemeProvider } from '../components/provider/AppThemeProvider';
+import { globalStyles } from '../../theme/template/global';
 
 class MainApp extends App<any> {
   render(): any {
