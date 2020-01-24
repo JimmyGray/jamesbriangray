@@ -11,6 +11,6 @@ export const globalStyles: any = {
   },
   '@font-face': {
     fontFamily: 'SF Mono',
-    src: `url('./fonts/SFMonoRegular.ttf') format('truetype')`
+    src: `url('static/fonts/SFMonoRegular.ttf') format('truetype')`
   }
 };
