@@ -41,7 +41,7 @@ export const StyledBurger = styled.div(({ theme, open }: any) => ({
 }));
 
 export const Burger = ({ open, setOpen, ...props }) => {
-  const isExpanded = open ? true : false;
+  const isExpanded = !!open;
   return (
       <StyledBurger aria-label="Toggle menu" aria-expanded={isExpanded} open={open}
                     onClick={() => setOpen(!open)} {...props}>

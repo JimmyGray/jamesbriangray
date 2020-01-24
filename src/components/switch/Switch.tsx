@@ -5,11 +5,10 @@ import { AppThemeContext } from '../provider/AppThemeProvider';
 import { GiSun, GiMoon } from 'react-icons/gi';
 
 const Container = styled.div({
-  width: 20,
+  width: 28,
   display: 'flex',
   alignItems: 'center',
-  cursor: 'pointer',
-  marginTop: 4
+  cursor: 'pointer'
 });
 
 const DarkIcon = styled(GiMoon)(({ theme }: any) => ({

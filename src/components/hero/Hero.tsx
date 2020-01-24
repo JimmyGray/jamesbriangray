@@ -2,16 +2,21 @@ import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
 import { mq } from '../../../theme/template/theme';
-import { Button } from '../common/button/Button';
 
-const Container = styled.section({
+const Container = styled.section(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
-  height: '100vh',
+  height: '80vh',
   alignItems: 'flex-start',
   justifyContent: 'center',
-  textAlign: 'left'
-});
+  textAlign: 'left',
+  paddingLeft: theme.spacing.xLarge,
+  paddingRight: theme.spacing.xLarge,
+  [mq.medium]: {
+    paddingLeft: theme.spacing.xLarge * 3,
+    paddingRight: theme.spacing.xLarge * 3
+  }
+}));
 
 const Text = styled.span(({ theme }: any) => ({
   marginTop: theme.spacing.small,
@@ -28,12 +33,6 @@ const Accent = styled(Text)(({ theme }: any) => ({
   color: theme.colors.accent
 }));
 
-const ContactButton = styled(Button)(({ theme }: any) => ({
-  marginTop: theme.spacing.large,
-  height: 60,
-  width: 150
-}));
-
 const Hero = () => (
     <Container>
       <h1>
@@ -43,7 +42,6 @@ const Hero = () => (
       </h1>
       <Text>I'm a <Accent>software engineer</Accent> threed in London, specializing in building
         exceptional, high-quality websites and applications.</Text>
-      <ContactButton label={ 'Contact Me' }/>
     </Container>
 );
 

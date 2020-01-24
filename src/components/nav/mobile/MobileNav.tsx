@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Sections } from '../../../model/enums/sections';
 
 export const StyledMenu = styled.nav(({ theme, open }: any) => ({
   display: 'flex',
@@ -31,23 +32,15 @@ export const StyledMenu = styled.nav(({ theme, open }: any) => ({
 }));
 
 export const Menu = ({ open, ...props }) => {
-
-  const isHidden = open ? true : false;
+  const isHidden = !!open;
   const tabIndex = isHidden ? 0 : -1;
-
   return (
       <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-        <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true">💁🏻‍♂️</span>
-          About us
+        <a href={`#${Sections.ABOUT}`} tabIndex={tabIndex}>
+          <span aria-hidden="true">About️ Me</span>
         </a>
-        <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true">💸</span>
-          Pricing
-        </a>
-        <a href="/" tabIndex={tabIndex}>
-          <span aria-hidden="true">📩</span>
-          Contact
+        <a href={`#${Sections.ABOUT}`} tabIndex={tabIndex}>
+          <span aria-hidden="true">Where I've worked</span>
         </a>
       </StyledMenu>
   );

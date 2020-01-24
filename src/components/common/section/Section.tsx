@@ -3,8 +3,10 @@ import { withTheme } from 'emotion-theming';
 import React from 'react';
 
 export interface SectionProps {
-  children?: JSX.Element;
+  renderBody: any;
   title: string;
+  anchor: string;
+  index: number;
 }
 
 const Container = styled.section(({ theme }: any) => ({
@@ -12,15 +14,30 @@ const Container = styled.section(({ theme }: any) => ({
   marginBottom: theme.spacing.xxLarge
 }));
 
-const Title = styled.h3(({ theme }: any) => ({
-  marginBottom: theme.spacing.large,
-  color: theme.colors.white
+const TitleContainer = styled.h3(({ theme }: any) => ({
+  marginBottom: theme.spacing.large
 }));
 
-const Section = ({ children, title }: SectionProps) => (
-    <Container>
-      <Title>{title}</Title>
-      {children}
+const Number = styled.span(({ theme }: any) => ({
+  color: theme.colors.primary.base,
+  fontFamily: theme.t.fontFamily.sfMono,
+  marginRight: theme.spacing.xSmall,
+  ...theme.t.t28
+}));
+
+const Title = styled.span(({ theme }: any) => ({
+  color: theme.colors.accent,
+  fontFamily: theme.t.fontFamily.sfMono,
+  ...theme.t.t28
+}));
+
+const Section = ({ renderBody, title, index, anchor }: SectionProps) => (
+    <Container id={anchor}>
+      <TitleContainer>
+        <Number>0{index + 1}.</Number>
+        <Title>{title}</Title>
+      </TitleContainer>
+      {renderBody()}
     </Container>
 );
 
