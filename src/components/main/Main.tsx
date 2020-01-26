@@ -6,21 +6,22 @@ import Footer from '../footer/Footer';
 import Hero from '../hero/Hero';
 import Nav from '../nav/Nav';
 
-export interface MainProps {}
+export interface MainProps {
+}
 
 const Container = styled.div(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
   backgroundColor: theme.colors.background,
-  height: '100vh'
+  height: '100%'
 }));
 
 const Main = ({}: MainProps) => {
   return (
       <Container>
-        <Nav />
+        <Nav/>
         <Hero/>
-        <Footer />
+        <Footer/>
       </Container>
   );
 };

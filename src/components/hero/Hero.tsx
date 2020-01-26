@@ -6,7 +6,8 @@ import { mq } from '../../../theme/template/theme';
 const Container = styled.section(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
-  height: '80vh',
+  flex: 1,
+  height: '100%',
   alignItems: 'flex-start',
   justifyContent: 'center',
   textAlign: 'left',
@@ -40,7 +41,7 @@ const Hero = () => (
           Hi! I'm  <Accent>James Gray</Accent> I build things for the web.
         </Text>
       </h1>
-      <Text>I'm a <Accent>software engineer</Accent> threed in London, specializing in building
+      <Text>I'm a <Accent>software engineer</Accent> based in London, specializing in building
         exceptional, high-quality websites and applications.</Text>
     </Container>
 );

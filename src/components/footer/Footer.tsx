@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { withTheme } from 'emotion-theming';
 import React from 'react';
-import { mq } from '../../../theme/template/theme';
 
 const Container = styled.footer(({ theme }: any) => ({
-  height: '10vh',
+  height: 100,
   backgroundColor: theme.colors.footer,
   display: 'flex',
   alignItems: 'center',

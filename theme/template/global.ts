@@ -7,7 +7,11 @@ export const globalStyles: any = {
   },
   ['html, body']: {
     fontSize: '10px !important',
-    backgroundColor: 'white !important'
+    backgroundColor: 'white !important',
+    height: '100%'
+  },
+  '#__next': {
+    height: '100%'
   },
   '@font-face': {
     fontFamily: 'SF Mono',

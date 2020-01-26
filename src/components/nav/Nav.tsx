@@ -10,7 +10,7 @@ const Container = styled.nav(({ theme }: any) => ({
   justifyContent: 'space-between',
   width: '100%',
   transition: theme.transition,
-  height: '10vh',
+  height: 100,
   zIndex: 1,
   paddingLeft: theme.spacing.xLarge,
   paddingRight: theme.spacing.xLarge,
